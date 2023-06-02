@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Sound Identification Web App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=9rZJUMOmDiYfXVbVLeGTAT1_5tCzI8ovh_q4ouWtZOR35YB_gXCyIauIZ_uyVkzY_15F0klSx7Dkzhv5P5oXFrm6FoytD4WsdsFcZRh7G9k6RGbBPpiNHbJ26YmK8dD4ea09c-nYmXmhSvP6VGneFpmxlMxH4xeehjDslr9jQDyti2ptho2G_tmU-WVOv00-gv9hFTRgBaFUUlO3U6sirPzbgyTslovKofa_WbFbDMksAaqc003n1c9fxQRdITPkqPgBfSR14G9USuvjLrtA5d447HIcxoImuT2YpHT8Gh4fnVwNiMaDSXvPujF8lDnTeTJuNzovKaN8SQZi4JsEXfQ1Z7hCzG-WQg0VSqHHs2so-XBg4q1wjFr2oeClQ44ogwrD8agSaLGWaLeQi0W-pvYb7vV_b9CCqHxEONUH0gEWgIrWkEtzD9OJS_-aEuImz1pa33o4BbMQY61AYopvn5c0Het7NBHs7k9lMJ3-2szuF7LlfnIm-xiqSKncazZ1gbofkCsrzdVg0A14yWmUOF3Fi6i5Goe1Mj7GEuY0J7Q2cZrZIUX5Jd35F1YfzhYe3lprmlS2nQsG87JKg8iTPn8moQRC7a_0nv6_vtPNIymRxZHu_XQ-jON3T1QQdbzao3WV_jE3sbGP4dnzdAx8OMdGJwJtd6Qji0mJEQzRnxidvAJjK6rdftXrWiguvqFvank8c1oLXe2C9QjwgFgdIYoP-I0zR4F0wRoK1T9-TK75jM-GB2RovM4yq6xwsAYgVfKak2rFEYwr70bnFNCpS4Xk_hDEV9QiK1G3F0LyU7xllZD3mFti-wFlPhgtI0x-cVhBR0mUZZg0LQcwGEtLpOAjx0-NnEs78Dxh64sVNXBDmyRXU68O5m6UKOYIT4R3nKuOP0Qc69DtFxtRwLVwuHnpL7M2Q3XArYg8UHFgwsKvUtvTboWKKFbdGKBO_R_dtsDHiB6cmuY2BzJB8gYtoSaC38rIEZcQG4n1RvtbbBAwkiR6Xu0FImAd9NWqwxx2wdX4-Ca8Wtsv9In7-Y9y_j-ah6s7o2WSrVp0Y6BcQSmVKdYs6UntEuF-JDEQlHwifpDdRsISyGvMPAfQqdTTwmHV57WA8AsO64utktLK14bEpFooc4VI0nN2osRR0_q39ibF5UPhyQVRDARTx3KfVL3sWkzV8VkZZgx3r31gLM2uNpmDFiCtAdfKxRkwTdMfVkQ6orQsRHAWoL7IZDJIknmKX7QDf-yiV0pHyMBOn8wD44Zjzqct5T5OokWqrwsvxLQCqPemoaVK0kYFbnl-jnVYfRqrcLDE-OUxchKH2YciiKSiIA59jDhnWHucOKbDhPYiS9ds4FaQe5rnDQp_-3CUl6xZNlHRq2Mq_mJk1V6C5pYtZifnvzkas98xy5IEbNEKdiU54wnI_jbsZnqIbkpkDt6N9uSMmAsyyIL6kxGPZosNgyZxQa5MZ8SQciGsWc8dBmrRRu1irYMUzNITlLHQ_AKOLujNZvDtDiEvSRPrgMo0IaBeTb0Ca07DMDx2zlSJZLr-aMQhZYvUZ8M_BAG3oI7BC1OxNQnVj9oyIWzkaQm0va-W4afB_6ZBBy17ahZCc1ZhNJ6S7cvht61qyYqPPBV7FZZWB2sbJG2wn4vwUXfH1Jjf8SPY3DDv4X1xZJD-xnYEBdnvuCVsqcKQLBzTzPv7rmISkgC602xsY4K7OB0jdWgyoBllVUkLhzLb" charset="UTF-8"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div class = "col-xs-12 header_div text-center">
+      <h1>Sound controlled aliens</h1>
+      <p>Note: Play different sounds like clap, snap, bell to make the aliens dance</p>
+    </div>
+    <div class = "main_div">
+      <center>
+<br>
+<button class = "btn btn-success" onclick = "StartClassification();"> START </button>
+<h3 id = "result_label"> I can hear - </h3>
+<h4 id = "result_confidence">Accuracy - </h4>
+<br>
+<img src = "aliens-01.png" id = "alien1" width = "300" height = "300">
+<img src = "aliens-02.png" id = "alien2" width = "300" height = "300">
+<img src = "aliens-03.png" id = "alien3" width = "300" height = "300">
+<img src = "aliens-04.png" id = "alien4" width = "300" height = "300">
+      </center>
+    </div>
+    <div class = "copy_right_footer">
+      Developed by - WhitehatJr BHUVAN
+    </div>
+<script src="main.js"></script>
+  </body>
+</html>
